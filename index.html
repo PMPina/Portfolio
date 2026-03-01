@@ -1,618 +1,1003 @@
 <!doctype html>
 <html lang="pt-br">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Portfólio de Pedro Mascarenhas Pina — Engenharia da Computação, Cybersecurity/Professional Services, Infra Windows e Projetos." />
-  <title>Pedro Mascarenhas Pina | Portfólio</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Portfólio de Pedro Mascarenhas Pina — Engenharia da Computação, Cybersecurity/Professional Services, Infra Windows e Projetos."
+    />
+    <title>Pedro Mascarenhas Pina | Portfólio</title>
 
-  <style>
-    :root{
-      --bg:#0b0f17;
-      --card:#101827;
-      --text:#e8eefc;
-      --muted:#a9b4cf;
-      --line:#1e2a40;
-      --accent:#2f81f7;
-      --accent2:#9b5cff;
-      --ok:#22c55e;
-      --warn:#f59e0b;
-      --bad:#ef4444;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius: 16px;
-      --max: 1100px;
-    }
+    <style>
+      :root {
+        --bg: #0b0f17;
+        --card: #101827;
+        --text: #e8eefc;
+        --muted: #a9b4cf;
+        --line: #1e2a40;
+        --accent: #2f81f7;
+        --accent2: #9b5cff;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        --radius: 16px;
+        --max: 1100px;
+      }
 
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", "Noto Sans", "Liberation Sans", sans-serif;
-      background:
-        radial-gradient(1200px 600px at 15% 0%, rgba(47,129,247,.18), transparent 60%),
-        radial-gradient(900px 500px at 90% 20%, rgba(155,92,255,.16), transparent 55%),
-        linear-gradient(180deg, #070a10 0%, var(--bg) 35%, #070a10 100%);
-      color:var(--text);
-      line-height:1.55;
-    }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Arial,
+          "Helvetica Neue",
+          "Noto Sans",
+          "Liberation Sans",
+          sans-serif;
+        background:
+          radial-gradient(
+            1200px 600px at 15% 0%,
+            rgba(47, 129, 247, 0.18),
+            transparent 60%
+          ),
+          radial-gradient(
+            900px 500px at 90% 20%,
+            rgba(155, 92, 255, 0.16),
+            transparent 55%
+          ),
+          linear-gradient(180deg, #070a10 0%, var(--bg) 35%, #070a10 100%);
+        color: var(--text);
+        line-height: 1.55;
+      }
 
-    a{ color:inherit; text-decoration:none; }
-    a:hover{ text-decoration:underline; }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
 
-    .wrap{ max-width:var(--max); margin:0 auto; padding:28px 18px 60px; }
-    header{
-      display:flex; gap:20px; align-items:center; justify-content:space-between;
-      position:sticky; top:0; z-index:20;
-      backdrop-filter: blur(10px);
-      background: rgba(11,15,23,.65);
-      border-bottom:1px solid rgba(30,42,64,.7);
-      padding:14px 18px;
-      margin:0 -18px 22px;
-    }
-    .brand{ display:flex; align-items:center; gap:12px; }
-    .dot{
-      width:12px; height:12px; border-radius:999px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: 0 0 0 6px rgba(47,129,247,.12);
-    }
-    .brand strong{ font-size:14px; letter-spacing:.4px; }
-    nav{ display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end; }
-    nav a{
-      font-size:13px; color:var(--muted);
-      padding:7px 10px; border-radius:10px;
-      border:1px solid transparent;
-    }
-    nav a:hover{
-      color:var(--text);
-      border-color: rgba(47,129,247,.35);
-      background: rgba(47,129,247,.08);
-      text-decoration:none;
-    }
+      /* ====== WRAP CONTEÚDO ====== */
+      .wrap {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 22px 18px 60px;
+      }
 
-    .hero{
-      display:grid;
-      grid-template-columns: 1.35fr .65fr;
-      gap:18px;
-      align-items:stretch;
-      margin-top:12px;
-    }
+      /* ====== TOPBAR FULL-WIDTH ====== */
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 50;
 
-    .card{
-      background: rgba(16,24,39,.72);
-      border:1px solid rgba(30,42,64,.8);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding:18px;
-    }
+        width: 100%;
+        backdrop-filter: blur(10px);
+        background: rgba(11, 15, 23, 0.65);
+        border-bottom: 1px solid rgba(30, 42, 64, 0.7);
+      }
+      .topbar__inner {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 14px 18px;
 
-    .hero h1{
-      margin:0 0 6px;
-      font-size:34px;
-      line-height:1.1;
-      letter-spacing:-.6px;
-    }
-    .subtitle{
-      margin:0 0 12px;
-      color:var(--muted);
-      font-size:14px;
-    }
-    .badges{ display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
-    .badge{
-      font-size:12px;
-      padding:7px 10px;
-      border-radius:999px;
-      border:1px solid rgba(30,42,64,.9);
-      color:var(--text);
-      background: rgba(255,255,255,.02);
-    }
-    .badge b{ color:#dbe7ff; }
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        justify-content: space-between;
+      }
 
-    .hero-actions{
-      display:flex; gap:10px; flex-wrap:wrap;
-      margin-top:14px;
-    }
-    .btn{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:10px 12px;
-      border-radius:12px;
-      border:1px solid rgba(30,42,64,.9);
-      background: rgba(255,255,255,.03);
-      color:var(--text);
-      font-size:13px;
-    }
-    .btn.primary{
-      background: linear-gradient(135deg, rgba(47,129,247,.22), rgba(155,92,255,.18));
-      border-color: rgba(47,129,247,.55);
-    }
-    .btn:hover{ text-decoration:none; transform: translateY(-1px); }
-    .btn:active{ transform: translateY(0); }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, var(--accent), var(--accent2));
+        box-shadow: 0 0 0 6px rgba(47, 129, 247, 0.12);
+      }
+      .brand strong {
+        font-size: 14px;
+        letter-spacing: 0.4px;
+      }
+      .subtitle {
+        margin: 0 0 12px;
+        color: var(--muted);
+        font-size: 14px;
+      }
 
-    .photo{
-      display:flex; flex-direction:column; gap:12px; height:100%;
-    }
-    .photo img{
-      width:100%;
-      height: 320px;
-      object-fit: cover;
-      border-radius: 14px;
-      border:1px solid rgba(30,42,64,.9);
-      background: #0b1220;
-    }
-    .photo .mini{
-      display:grid; gap:8px;
-      color:var(--muted);
-      font-size:13px;
-    }
-    .mini span{ display:flex; justify-content:space-between; gap:12px; }
-    .mini span i{ font-style:normal; color:var(--text); }
+      nav {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+      nav a {
+        font-size: 13px;
+        color: var(--muted);
+        padding: 7px 10px;
+        border-radius: 10px;
+        border: 1px solid transparent;
+      }
+      nav a:hover {
+        color: var(--text);
+        border-color: rgba(47, 129, 247, 0.35);
+        background: rgba(47, 129, 247, 0.08);
+        text-decoration: none;
+      }
+      nav a.is-active {
+        color: var(--text);
+        border-color: rgba(47, 129, 247, 0.55);
+        background: rgba(47, 129, 247, 0.1);
+      }
 
-    section{ margin-top:18px; }
-    section h2{
-      margin:0 0 10px;
-      font-size:18px;
-      letter-spacing:-.2px;
-    }
+      /* ====== HERO ====== */
+      .hero {
+        display: grid;
+        grid-template-columns: 1.35fr 0.65fr;
+        gap: 18px;
+        align-items: stretch;
+        margin-top: 14px;
+      }
 
-    .grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
-    .grid-3{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+      .card {
+        background: rgba(16, 24, 39, 0.72);
+        border: 1px solid rgba(30, 42, 64, 0.8);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 18px;
+      }
 
-    .list{ display:grid; gap:12px; }
-    .item{
-      border:1px solid rgba(30,42,64,.8);
-      border-radius: 14px;
-      padding:14px;
-      background: rgba(255,255,255,.02);
-    }
-    .item h3{ margin:0 0 6px; font-size:15px; }
-    .meta{ margin:0; color:var(--muted); font-size:13px; }
-    .item ul{ margin:10px 0 0 18px; color:var(--text); }
-    .item li{ margin:6px 0; color:#dbe7ff; }
-    .item li small{ color:var(--muted); }
+      .hero h1 {
+        margin: 0 0 6px;
+        font-size: 34px;
+        line-height: 1.1;
+        letter-spacing: -0.6px;
+      }
 
-    .pillrow{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
-    .pill{
-      font-size:12px; color:#dbe7ff;
-      border:1px solid rgba(30,42,64,.9);
-      background: rgba(47,129,247,.08);
-      padding:6px 10px; border-radius:999px;
-    }
+      .badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 12px;
+      }
+      .badge {
+        font-size: 12px;
+        padding: 7px 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(30, 42, 64, 0.9);
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.02);
+      }
+      .badge b {
+        color: #dbe7ff;
+      }
 
-    .kpi{
-      display:grid; grid-template-columns:repeat(3,1fr); gap:10px;
-      margin-top:12px;
-    }
-    .kpi .box{
-      border:1px solid rgba(30,42,64,.85);
-      border-radius:14px;
-      padding:12px;
-      background: rgba(255,255,255,.02);
-    }
-    .kpi .box b{ font-size:16px; }
-    .kpi .box p{ margin:4px 0 0; color:var(--muted); font-size:12px; }
+      .hero-actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 14px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 12px;
+        border-radius: 12px;
+        border: 1px solid rgba(30, 42, 64, 0.9);
+        background: rgba(255, 255, 255, 0.03);
+        color: var(--text);
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .btn.primary {
+        background: linear-gradient(
+          135deg,
+          rgba(47, 129, 247, 0.22),
+          rgba(155, 92, 255, 0.18)
+        );
+        border-color: rgba(47, 129, 247, 0.55);
+      }
+      .btn:hover {
+        text-decoration: none;
+        transform: translateY(-1px);
+      }
+      .btn:active {
+        transform: translateY(0);
+      }
 
-    footer{
-      margin-top:22px;
-      color:var(--muted);
-      font-size:12px;
-      text-align:center;
-      padding:18px 0 0;
-      border-top:1px solid rgba(30,42,64,.6);
-    }
+      .photo {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        height: 100%;
+      }
+      .photo img {
+        width: 100%;
+        height: 320px;
+        object-fit: cover;
+        border-radius: 14px;
+        border: 1px solid rgba(30, 42, 64, 0.9);
+        background: #0b1220;
+      }
+      .photo .mini {
+        display: grid;
+        gap: 8px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .mini span {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      .mini span i {
+        font-style: normal;
+        color: var(--text);
+      }
 
-    @media (max-width: 920px){
-      .hero{ grid-template-columns:1fr; }
-      .grid-2{ grid-template-columns:1fr; }
-      .grid-3{ grid-template-columns:1fr; }
-      .photo img{ height: 280px; }
-      header{ position:static; margin:0 0 18px; }
-    }
-  </style>
-</head>
+      /* ====== MENU DE SEÇÕES (TABS) ====== */
+      .sectionTabs {
+        margin-top: 18px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        padding: 10px;
+        border: 1px solid rgba(30, 42, 64, 0.8);
+        border-radius: 14px;
+        background: rgba(16, 24, 39, 0.55);
+        box-shadow: var(--shadow);
+      }
+      .tabBtn {
+        font-size: 13px;
+        color: var(--muted);
+        padding: 9px 12px;
+        border-radius: 12px;
+        border: 1px solid rgba(30, 42, 64, 0.85);
+        background: rgba(255, 255, 255, 0.03);
+        cursor: pointer;
+        user-select: none;
+      }
+      .tabBtn:hover {
+        color: var(--text);
+        border-color: rgba(47, 129, 247, 0.35);
+        background: rgba(47, 129, 247, 0.08);
+      }
+      .tabBtn.is-active {
+        color: var(--text);
+        border-color: rgba(47, 129, 247, 0.55);
+        background: linear-gradient(
+          135deg,
+          rgba(47, 129, 247, 0.18),
+          rgba(155, 92, 255, 0.12)
+        );
+      }
 
-<body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <div class="dot" aria-hidden="true"></div>
-        <div>
-          <strong>Pedro Mascarenhas Pina</strong><br/>
-          <span class="subtitle" style="margin:0;">Engenharia da Computação • Infra Windows • Cybersecurity (PS)</span>
+      /* ====== SEÇÕES (SÓ UMA APARECE POR VEZ) ====== */
+      section {
+        margin-top: 18px;
+      }
+      section h2 {
+        margin: 0 0 10px;
+        font-size: 18px;
+        letter-spacing: -0.2px;
+      }
+      .sectionPane {
+        display: none;
+      }
+      .sectionPane.is-active {
+        display: block;
+      }
+
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+
+      .list {
+        display: grid;
+        gap: 12px;
+      }
+      .item {
+        border: 1px solid rgba(30, 42, 64, 0.8);
+        border-radius: 14px;
+        padding: 14px;
+        background: rgba(255, 255, 255, 0.02);
+      }
+      .item h3 {
+        margin: 0 0 6px;
+        font-size: 15px;
+      }
+      .meta {
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .item ul {
+        margin: 10px 0 0 18px;
+        color: var(--text);
+      }
+      .item li {
+        margin: 6px 0;
+        color: #dbe7ff;
+      }
+      .item li small {
+        color: var(--muted);
+      }
+
+      .pillrow {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 10px;
+      }
+      .pill {
+        font-size: 12px;
+        color: #dbe7ff;
+        border: 1px solid rgba(30, 42, 64, 0.9);
+        background: rgba(47, 129, 247, 0.08);
+        padding: 6px 10px;
+        border-radius: 999px;
+      }
+
+      .kpi {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-top: 12px;
+      }
+      .kpi .box {
+        border: 1px solid rgba(30, 42, 64, 0.85);
+        border-radius: 14px;
+        padding: 12px;
+        background: rgba(255, 255, 255, 0.02);
+      }
+      .kpi .box b {
+        font-size: 16px;
+      }
+      .kpi .box p {
+        margin: 4px 0 0;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      footer {
+        margin-top: 22px;
+        color: var(--muted);
+        font-size: 12px;
+        text-align: center;
+        padding: 18px 0 0;
+        border-top: 1px solid rgba(30, 42, 64, 0.6);
+      }
+
+      @media (max-width: 920px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+        .grid-2 {
+          grid-template-columns: 1fr;
+        }
+        .grid-3 {
+          grid-template-columns: 1fr;
+        }
+        .photo img {
+          height: 280px;
+        }
+        .topbar {
+          position: static;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- TOPBAR fora do .wrap = full-width -->
+    <header class="topbar">
+      <div class="topbar__inner">
+        <div class="brand">
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <strong>Pedro Mascarenhas Pina</strong><br />
+            <span class="subtitle" style="margin: 0"
+              >Engenharia da Computação • Infra Windows • Cybersecurity
+              (PS)</span
+            >
+          </div>
         </div>
-      </div>
 
-      <nav aria-label="Navegação">
-        <a href="#sobre">Sobre</a>
-        <a href="#habilidades">Habilidades</a>
-        <a href="#experiencia">Experiência</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#formacao">Formação</a>
-        <a href="#contato">Contato</a>
-      </nav>
+        <nav aria-label="Navegação">
+          <!-- agora navega por “telas” -->
+          <a href="#sobre" data-go="sobre">Sobre</a>
+          <a href="#habilidades" data-go="habilidades">Habilidades</a>
+          <a href="#experiencia" data-go="experiencia">Experiência</a>
+          <a href="#projetos" data-go="projetos">Projetos</a>
+          <a href="#formacao" data-go="formacao">Formação</a>
+          <a href="#contato" data-go="contato">Contato</a>
+        </nav>
+      </div>
     </header>
 
-    <main>
-      <div class="hero">
-        <div class="card">
-          <h1>Pedro Mascarenhas Pina</h1>
-          <p class="subtitle">
-            Estudante de Engenharia da Computação (SENAI CIMATEC) e estagiário em <b>Professional Services</b>
-            com foco em <b>infraestrutura Windows</b>, <b>operações de TI</b> e <b>segurança</b>.
+    <div class="wrap">
+      <main>
+        <div class="hero">
+          <div class="card">
+            <h1>Pedro Mascarenhas Pina</h1>
+            <p class="subtitle">
+              Estudante de Engenharia da Computação (SENAI CIMATEC) e estagiário
+              em <b>Professional Services</b> com foco em
+              <b>infraestrutura Windows</b>, <b>operações de TI</b> e
+              <b>segurança</b>.
+            </p>
+
+            <div class="badges" aria-label="Destaques">
+              <span class="badge"
+                ><b>Infra Windows</b> (AD/PowerShell/RDS)</span
+              >
+              <span class="badge"
+                ><b>Cybersecurity Ops</b> (agentes, hardening,
+                troubleshooting)</span
+              >
+              <span class="badge"><b>Automação</b> e documentação técnica</span>
+              <span class="badge"
+                ><b>Projetos acadêmicos</b> (IoT / Software / Dados)</span
+              >
+            </div>
+
+            <div class="kpi" aria-label="Indicadores">
+              <div class="box">
+                <b>Hands-on</b>
+                <p>Rotina prática em ambiente corporativo + laboratório</p>
+              </div>
+              <div class="box">
+                <b>Processo</b>
+                <p>Template, registro, checklist e rastreabilidade</p>
+              </div>
+              <div class="box">
+                <b>Entrega</b>
+                <p>Foco em resultado: ambiente pronto, estável e documentado</p>
+              </div>
+            </div>
+
+            <div class="hero-actions">
+              <button class="btn primary" data-tab="contato">
+                📩 Falar comigo
+              </button>
+              <button class="btn" data-tab="projetos">🧩 Ver projetos</button>
+              <a
+                class="btn"
+                href="#"
+                onclick="
+                  window.print();
+                  return false;
+                "
+                >🖨️ Imprimir / PDF</a
+              >
+            </div>
+
+            <p class="subtitle" style="margin-top: 12px">
+              Humor técnico do dia: se não tem log, não aconteceu. Se tem log…
+              aconteceu duas vezes.
+            </p>
+          </div>
+
+          <aside class="card photo">
+            <img src="foto-pedro.jpg" alt="Foto de Pedro Mascarenhas Pina" />
+
+            <div class="mini" aria-label="Resumo rápido">
+              <span><b>Local</b> <i>Salvador, BA (Brasil)</i></span>
+              <span><b>Atuação</b> <i>Infra Windows / PS / Segurança</i></span>
+              <span
+                ><b>Stack</b>
+                <i>PowerShell • AD • Windows Server • GLPI</i></span
+              >
+            </div>
+          </aside>
+        </div>
+
+        <!-- MENU SEPARADO POR CAMPO -->
+        <div class="sectionTabs" id="sectionTabs" aria-label="Menus das seções">
+          <button class="tabBtn is-active" data-tab="sobre">Sobre</button>
+          <button class="tabBtn" data-tab="habilidades">Habilidades</button>
+          <button class="tabBtn" data-tab="experiencia">Experiência</button>
+          <button class="tabBtn" data-tab="projetos">Projetos</button>
+          <button class="tabBtn" data-tab="formacao">Formação</button>
+          <button class="tabBtn" data-tab="contato">Contato</button>
+        </div>
+
+        <!-- ====== PANES (um por vez) ====== -->
+        <section
+          id="sobre"
+          class="card sectionPane is-active"
+          data-section="sobre"
+        >
+          <h2>Sobre</h2>
+          <p>
+            Sou estudante de <b>Engenharia da Computação</b> e atuo como
+            estagiário em <b>Professional Services</b>
+            (ambiente corporativo com demandas reais), executando atividades de
+            suporte e implantação em
+            <b>Windows</b>, <b>infraestrutura</b> e <b>segurança</b>.
+          </p>
+          <p>
+            Meu jeito de trabalhar é bem “clássico”: entender o cenário, definir
+            escopo, executar com checklist, registrar tudo e deixar o ambiente
+            pronto para o próximo cara — porque o próximo cara pode ser eu, numa
+            sexta-feira.
           </p>
 
-          <div class="badges" aria-label="Destaques">
-            <span class="badge"><b>Infra Windows</b> (AD/PowerShell/RDS)</span>
-            <span class="badge"><b>Cybersecurity Ops</b> (agentes, hardening, troubleshooting)</span>
-            <span class="badge"><b>Automação</b> e documentação técnica</span>
-            <span class="badge"><b>Projetos acadêmicos</b> (IoT / Software / Dados)</span>
+          <div class="pillrow" aria-label="Áreas de interesse">
+            <span class="pill">Administração Windows</span>
+            <span class="pill">Active Directory</span>
+            <span class="pill">PowerShell</span>
+            <span class="pill">RDS / Acesso remoto</span>
+            <span class="pill">Gestão de ativos</span>
+            <span class="pill">Documentação técnica</span>
+            <span class="pill">IoT aplicado</span>
+            <span class="pill">Engenharia de Software</span>
+          </div>
+        </section>
+
+        <section
+          id="habilidades"
+          class="sectionPane"
+          data-section="habilidades"
+        >
+          <div class="grid-2">
+            <div class="card">
+              <h2>Habilidades técnicas</h2>
+              <div class="list">
+                <div class="item">
+                  <h3>Windows / Infra</h3>
+                  <p class="meta">Administração e troubleshooting</p>
+                  <ul>
+                    <li>
+                      Windows Server, clientes Windows, noções de <b>RDS</b> e
+                      administração remota
+                    </li>
+                    <li>
+                      <b>PowerShell</b> para automação e rotinas administrativas
+                    </li>
+                    <li>
+                      Conceitos de rede corporativa, acesso remoto/VPN e
+                      práticas de operação
+                    </li>
+                  </ul>
+                  <div class="pillrow">
+                    <span class="pill">PowerShell</span>
+                    <span class="pill">Remote Management</span>
+                    <span class="pill">RDS</span>
+                    <span class="pill">Troubleshooting</span>
+                  </div>
+                </div>
+
+                <div class="item">
+                  <h3>Segurança / Operações</h3>
+                  <p class="meta">
+                    Rotina de PS com foco em estabilidade e conformidade
+                  </p>
+                  <ul>
+                    <li>
+                      Instalação/validação de agentes e ferramentas corporativas
+                      (EDR, inventário, etc.)
+                    </li>
+                    <li>
+                      Boas práticas: princípio do menor privilégio, auditoria,
+                      registro e controle
+                    </li>
+                    <li>
+                      Atuação com chamados e mudanças com rastreabilidade (ex.:
+                      GLPI)
+                    </li>
+                  </ul>
+                  <div class="pillrow">
+                    <span class="pill">EDR / Agentes</span>
+                    <span class="pill">Hardening</span>
+                    <span class="pill">ITSM / GLPI</span>
+                  </div>
+                </div>
+
+                <div class="item">
+                  <h3>Dados e Software</h3>
+                  <p class="meta">Base acadêmica + aplicações práticas</p>
+                  <ul>
+                    <li>
+                      Modelagem e organização de informação (documentação,
+                      padrões, templates)
+                    </li>
+                    <li>
+                      Ideação de soluções com <b>IoT</b> para controle/estoque e
+                      dados operacionais
+                    </li>
+                    <li>
+                      Raciocínio lógico e engenharia: do requisito à entrega
+                    </li>
+                  </ul>
+                  <div class="pillrow">
+                    <span class="pill">IoT</span>
+                    <span class="pill">Modelagem</span>
+                    <span class="pill">Documentação</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <h2>Competências</h2>
+              <div class="list">
+                <div class="item">
+                  <h3>Execução com método</h3>
+                  <p class="meta">
+                    Você mede duas vezes e corta uma (e ainda salva o log).
+                  </p>
+                  <ul>
+                    <li>
+                      Organização por templates e padrões (notas técnicas,
+                      registros e checklists)
+                    </li>
+                    <li>
+                      Comunicação objetiva: contexto → ação → evidência →
+                      próximo passo
+                    </li>
+                    <li>
+                      Aprendizado contínuo guiado por prática (curso +
+                      laboratório + ambiente real)
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="item">
+                  <h3>Trabalho em equipe</h3>
+                  <p class="meta">
+                    Colaboração com analistas e alinhamento de execução
+                  </p>
+                  <ul>
+                    <li>
+                      Atuação conjunta em tarefas e validações (ambiente
+                      corporativo)
+                    </li>
+                    <li>
+                      Priorização e disciplina para fechar entregas dentro do
+                      tempo
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="item">
+                  <h3>Perfil</h3>
+                  <p class="meta">Prático, consistente e sem drama técnico.</p>
+                  <ul>
+                    <li>Foco em resultado e estabilidade</li>
+                    <li>
+                      Atenção a detalhes (principalmente os que quebram
+                      produção)
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="experiencia"
+          class="card sectionPane"
+          data-section="experiencia"
+        >
+          <h2>Experiência</h2>
+          <div class="list">
+            <div class="item">
+              <h3>
+                Estagiário — Professional Services (Cybersecurity / Infra)
+              </h3>
+              <p class="meta">
+                Atuação prática em rotinas de TI, implantação e suporte •
+                (Período: atual)
+              </p>
+              <ul>
+                <li>
+                  Execução de atividades em infraestrutura Windows e suporte
+                  operacional
+                </li>
+                <li>
+                  Implantação/validação de agentes e ferramentas corporativas
+                </li>
+                <li>
+                  Documentação técnica, organização de inventário e
+                  abertura/atualização de chamados
+                </li>
+              </ul>
+            </div>
+
+            <div class="item">
+              <h3>Projetos acadêmicos e estudos aplicados</h3>
+              <p class="meta">SENAI CIMATEC • Engenharia da Computação</p>
+              <ul>
+                <li>
+                  Ideação de soluções de <b>sistemas de informação</b> (ex.: IoT
+                  para estoque)
+                </li>
+                <li>
+                  Estudos de redes, sistemas, matemática/física aplicada e
+                  fundamentos de computação
+                </li>
+                <li>
+                  Rotina de organização de conhecimento (Obsidian) e
+                  padronização de notas
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Projetos: arrumado para não virar “card dentro de grid-3 com coluna 1 só” -->
+        <section id="projetos" class="sectionPane" data-section="projetos">
+          <div class="card">
+            <h2>Projetos</h2>
+
+            <div class="grid-3">
+              <div class="item">
+                <h3>Inventário e Dashboard de Ativos</h3>
+                <p class="meta">
+                  Controle de monitores/ativos • padronização de campos e layout
+                </p>
+                <ul>
+                  <li>
+                    Estrutura de cadastro com status, localização e
+                    identificação
+                  </li>
+                  <li>Foco em consistência visual e facilidade de auditoria</li>
+                </ul>
+                <div class="pillrow">
+                  <span class="pill">Excel</span>
+                  <span class="pill">Inventário</span>
+                  <span class="pill">Padronização</span>
+                </div>
+              </div>
+
+              <div class="item">
+                <h3>Documentação técnica (Templates)</h3>
+                <p class="meta">Notas técnicas e registros de execução</p>
+                <ul>
+                  <li>
+                    Templates para estudo e para casos reais (checklist +
+                    evidência)
+                  </li>
+                  <li>Organização e versionamento do conhecimento</li>
+                </ul>
+                <div class="pillrow">
+                  <span class="pill">Obsidian</span>
+                  <span class="pill">Template</span>
+                  <span class="pill">Processo</span>
+                </div>
+              </div>
+
+              <div class="item">
+                <h3>Ideação de Solução IoT para Estoque</h3>
+                <p class="meta">Hardware + software + dados</p>
+                <ul>
+                  <li>
+                    Proposta de monitoramento de entradas/saídas e rastreio de
+                    itens
+                  </li>
+                  <li>Estrutura de dados para auditoria e relatórios</li>
+                </ul>
+                <div class="pillrow">
+                  <span class="pill">IoT</span>
+                  <span class="pill">Dados</span>
+                  <span class="pill">Sistemas</span>
+                </div>
+              </div>
+
+              <div class="item">
+                <h3>Administração Remota com PowerShell</h3>
+                <p class="meta">Prática baseada em curso/labs</p>
+                <ul>
+                  <li>Rotinas administrativas remotas e manutenção</li>
+                  <li>Base para automação e padronização de tarefas</li>
+                </ul>
+                <div class="pillrow">
+                  <span class="pill">PowerShell</span>
+                  <span class="pill">Windows Server</span>
+                  <span class="pill">Remoting</span>
+                </div>
+              </div>
+
+              <div class="item">
+                <h3>Links</h3>
+                <p class="meta">Portfólio e perfil</p>
+                <p class="subtitle" style="margin: 10px 0 0">
+                  <a
+                    href="https://github.com/PMPina"
+                    target="_blank"
+                    rel="noopener"
+                    ><code>GitHub: github.com/PMPina</code></a
+                  ><br />
+                  <a
+                    href="https://www.linkedin.com/in/pedro-mascarenhas-pina-9a872a287"
+                    target="_blank"
+                    rel="noopener"
+                    ><code>LinkedIn: /pedro-mascarenhas-pina-9a872a287</code></a
+                  >
+                </p>
+                <div style="margin-top: 10px">
+                  <a class="btn" href="cv.pdf" target="_blank" rel="noopener"
+                    >📄 Abrir CV</a
+                  >
+                </div>
+              </div>
+
+              <div class="item">
+                <h3>Resultados (exemplos)</h3>
+                <p class="meta">Menos retrabalho, mais previsibilidade</p>
+                <ul>
+                  <li>Padronização de campos e rotinas de registro</li>
+                  <li>Checklists e templates para handoff</li>
+                  <li>Curso → prática → evidência</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="formacao" class="sectionPane" data-section="formacao">
+          <div class="grid-2">
+            <div class="card">
+              <h2>Formação</h2>
+              <div class="list">
+                <div class="item">
+                  <h3>Engenharia da Computação</h3>
+                  <p class="meta">SENAI CIMATEC • (em andamento)</p>
+                  <ul>
+                    <li>
+                      Base sólida em computação, sistemas, redes, dados e
+                      engenharia
+                    </li>
+                    <li>
+                      Projetos acadêmicos com foco em solução e apresentação
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <h2>Cursos e trilhas</h2>
+              <div class="list">
+                <div class="item">
+                  <h3>Windows / Administração</h3>
+                  <p class="meta">
+                    Trilhas de estudo e prática (PowerShell, serviços,
+                    administração remota)
+                  </p>
+                  <ul>
+                    <li>Windows PowerShell para administração remota</li>
+                    <li>Conceitos relacionados a RDS e acesso remoto</li>
+                  </ul>
+                </div>
+                <div class="item">
+                  <h3>Organização de conhecimento</h3>
+                  <p class="meta">
+                    Obsidian para faculdade/estágio • templates e consistência
+                  </p>
+                  <ul>
+                    <li>Padronização de notas de estudo e de casos reais</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="contato" class="card sectionPane" data-section="contato">
+          <h2>Contato</h2>
+          <div class="grid-2">
+            <div class="item">
+              <h3>Email</h3>
+              <p class="meta">pmpina27@gmail.com</p>
+            </div>
+            <div class="item">
+              <h3>WhatsApp</h3>
+              <p class="meta">+55 (71) 98106-2371</p>
+            </div>
           </div>
 
-          <div class="kpi" aria-label="Indicadores">
-            <div class="box">
-              <b>Hands-on</b>
-              <p>Rotina prática em ambiente corporativo + laboratório</p>
-            </div>
-            <div class="box">
-              <b>Processo</b>
-              <p>Template, registro, checklist e rastreabilidade</p>
-            </div>
-            <div class="box">
-              <b>Entrega</b>
-              <p>Foco em resultado: ambiente pronto, estável e documentado</p>
-            </div>
-          </div>
-
-          <div class="hero-actions">
-            <a class="btn primary" href="#contato">📩 Falar comigo</a>
-            <a class="btn" href="#projetos">🧩 Ver projetos</a>
-            <a class="btn" href="#" onclick="window.print(); return false;">🖨️ Imprimir / PDF</a>
-          </div>
-
-          <p class="subtitle" style="margin-top:12px">
-            Humor técnico do dia: se não tem log, não aconteceu. Se tem log… aconteceu duas vezes.
+          <p class="subtitle" style="margin-top: 12px">
+            Última atualização: <span id="lastUpdate"></span>
           </p>
-        </div>
+        </section>
 
-        <aside class="card photo">
-          <!-- Coloque sua imagem na mesma pasta e renomeie para: foto-pedro.jpg -->
-          <img src="foto-pedro.jpg" alt="Foto de Pedro Mascarenhas Pina" />
+        <footer>
+          © <span id="year"></span> Pedro Mascarenhas Pina • Portfólio em HTML
+          (simples, rápido e sem frescura)
+        </footer>
+      </main>
+    </div>
 
-          <div class="mini" aria-label="Resumo rápido">
-            <span><b>Local</b> <i>Salvador, BA (Brasil)</i></span>
-            <span><b>Atuação</b> <i>Infra Windows / PS / Segurança</i></span>
-            <span><b>Stack</b> <i>PowerShell • AD • Windows Server • GLPI</i></span>
-          </div>
-        </aside>
-      </div>
+    <script>
+      // Ano e "última atualização" automáticos
+      const now = new Date();
+      document.getElementById("year").textContent = now.getFullYear();
+      document.getElementById("lastUpdate").textContent =
+        now.toLocaleDateString("pt-BR", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
 
-      <section id="sobre" class="card">
-        <h2>Sobre</h2>
-        <p>
-          Sou estudante de <b>Engenharia da Computação</b> e atuo como estagiário em <b>Professional Services</b>
-          (ambiente corporativo com demandas reais), executando atividades de suporte e implantação em
-          <b>Windows</b>, <b>infraestrutura</b> e <b>segurança</b>.
-        </p>
-        <p>
-          Meu jeito de trabalhar é bem “clássico”: entender o cenário, definir escopo, executar com checklist,
-          registrar tudo e deixar o ambiente pronto para o próximo cara — porque o próximo cara pode ser eu, numa sexta-feira.
-        </p>
+      // ====== Tabs: 1 seção por vez ======
+      const tabsBar = document.getElementById("sectionTabs");
+      const tabButtons = Array.from(document.querySelectorAll(".tabBtn"));
+      const panes = Array.from(document.querySelectorAll(".sectionPane"));
+      const navLinks = Array.from(document.querySelectorAll("nav a[data-go]"));
+      const heroButtons = Array.from(document.querySelectorAll("[data-tab]"));
 
-        <div class="pillrow" aria-label="Áreas de interesse">
-          <span class="pill">Administração Windows</span>
-          <span class="pill">Active Directory</span>
-          <span class="pill">PowerShell</span>
-          <span class="pill">RDS / Acesso remoto</span>
-          <span class="pill">Gestão de ativos</span>
-          <span class="pill">Documentação técnica</span>
-          <span class="pill">IoT aplicado</span>
-          <span class="pill">Engenharia de Software</span>
-        </div>
-      </section>
+      function setActive(sectionId) {
+        // panes
+        panes.forEach((p) =>
+          p.classList.toggle("is-active", p.dataset.section === sectionId),
+        );
 
-      <section id="habilidades" class="grid-2">
-        <div class="card">
-          <h2>Habilidades técnicas</h2>
-          <div class="list">
-            <div class="item">
-              <h3>Windows / Infra</h3>
-              <p class="meta">Administração e troubleshooting</p>
-              <ul>
-                <li>Windows Server, clientes Windows, noções de <b>RDS</b> e administração remota</li>
-                <li><b>PowerShell</b> para automação e rotinas administrativas</li>
-                <li>Conceitos de rede corporativa, acesso remoto/VPN e práticas de operação</li>
-              </ul>
-              <div class="pillrow">
-                <span class="pill">PowerShell</span>
-                <span class="pill">Remote Management</span>
-                <span class="pill">RDS</span>
-                <span class="pill">Troubleshooting</span>
-              </div>
-            </div>
+        // tab buttons
+        tabButtons.forEach((b) =>
+          b.classList.toggle("is-active", b.dataset.tab === sectionId),
+        );
 
-            <div class="item">
-              <h3>Segurança / Operações</h3>
-              <p class="meta">Rotina de PS com foco em estabilidade e conformidade</p>
-              <ul>
-                <li>Instalação/validação de agentes e ferramentas corporativas (EDR, inventário, etc.)</li>
-                <li>Boas práticas: princípio do menor privilégio, auditoria, registro e controle</li>
-                <li>Atuação com chamados e mudanças com rastreabilidade (ex.: GLPI)</li>
-              </ul>
-              <div class="pillrow">
-                <span class="pill">EDR / Agentes</span>
-                <span class="pill">Hardening</span>
-                <span class="pill">ITSM / GLPI</span>
-              </div>
-            </div>
+        // nav active
+        navLinks.forEach((a) =>
+          a.classList.toggle("is-active", a.dataset.go === sectionId),
+        );
 
-            <div class="item">
-              <h3>Dados e Software</h3>
-              <p class="meta">Base acadêmica + aplicações práticas</p>
-              <ul>
-                <li>Modelagem e organização de informação (documentação, padrões, templates)</li>
-                <li>Ideação de soluções com <b>IoT</b> para controle/estoque e dados operacionais</li>
-                <li>Raciocínio lógico e engenharia: do requisito à entrega</li>
-              </ul>
-              <div class="pillrow">
-                <span class="pill">IoT</span>
-                <span class="pill">Modelagem</span>
-                <span class="pill">Documentação</span>
-              </div>
-            </div>
-          </div>
-        </div>
+        // scroll “bonito” para o menu de seções (pra não ficar no meio do nada)
+        tabsBar?.scrollIntoView({ behavior: "smooth", block: "start" });
 
-        <div class="card">
-          <h2>Competências</h2>
-          <div class="list">
-            <div class="item">
-              <h3>Execução com método</h3>
-              <p class="meta">Você mede duas vezes e corta uma (e ainda salva o log).</p>
-              <ul>
-                <li>Organização por templates e padrões (notas técnicas, registros e checklists)</li>
-                <li>Comunicação objetiva: contexto → ação → evidência → próximo passo</li>
-                <li>Aprendizado contínuo guiado por prática (curso + laboratório + ambiente real)</li>
-              </ul>
-            </div>
+        // atualiza hash sem “pular” a página
+        history.replaceState(null, "", `#${sectionId}`);
+      }
 
-            <div class="item">
-              <h3>Trabalho em equipe</h3>
-              <p class="meta">Colaboração com analistas e alinhamento de execução</p>
-              <ul>
-                <li>Atuação conjunta em tarefas e validações (ambiente corporativo)</li>
-                <li>Priorização e disciplina para fechar entregas dentro do tempo</li>
-              </ul>
-            </div>
+      // click nas tabs
+      tabButtons.forEach((btn) => {
+        btn.addEventListener("click", () => setActive(btn.dataset.tab));
+      });
 
-            <div class="item">
-              <h3>Perfil</h3>
-              <p class="meta">Prático, consistente e sem drama técnico.</p>
-              <ul>
-                <li>Foco em resultado e estabilidade</li>
-                <li>Atenção a detalhes (principalmente os que quebram produção)</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
+      // click no menu superior
+      navLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          setActive(link.dataset.go);
+        });
+      });
 
-      <section id="experiencia" class="card">
-        <h2>Experiência</h2>
-        <div class="list">
-          <div class="item">
-            <h3>Estagiário — Professional Services (Cybersecurity / Infra)</h3>
-            <p class="meta">Atuação prática em rotinas de TI, implantação e suporte • (Período: atual)</p>
-            <ul>
-              <li>Execução de atividades em infraestrutura Windows e suporte operacional</li>
-              <li>Implantação/validação de agentes e ferramentas corporativas</li>
-              <li>Documentação técnica, organização de inventário e abertura/atualização de chamados</li>
-            </ul>
-          </div>
+      // botões do hero
+      heroButtons.forEach((b) => {
+        b.addEventListener("click", () => setActive(b.dataset.tab));
+      });
 
-          <div class="item">
-            <h3>Projetos acadêmicos e estudos aplicados</h3>
-            <p class="meta">SENAI CIMATEC • Engenharia da Computação</p>
-            <ul>
-              <li>Ideação de soluções de <b>sistemas de informação</b> (ex.: IoT para estoque)</li>
-              <li>Estudos de redes, sistemas, matemática/física aplicada e fundamentos de computação</li>
-              <li>Rotina de organização de conhecimento (Obsidian) e padronização de notas</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="projetos" class="grid-3">
-        <div class="card">
-          <h2>Projetos</h2>
-          <div class="list">
-            <div class="item">
-              <h3>Inventário e Dashboard de Ativos</h3>
-              <p class="meta">Controle de monitores/ativos • padronização de campos e layout</p>
-              <ul>
-                <li>Estrutura de cadastro com status, localização e identificação</li>
-                <li>Foco em consistência visual e facilidade de auditoria</li>
-              </ul>
-              <div class="pillrow">
-                <span class="pill">Excel</span>
-                <span class="pill">Inventário</span>
-                <span class="pill">Padronização</span>
-              </div>
-            </div>
-
-            <div class="item">
-              <h3>Documentação técnica (Templates)</h3>
-              <p class="meta">Notas técnicas e registros de execução</p>
-              <ul>
-                <li>Templates para estudo e para casos reais (checklist + evidência)</li>
-                <li>Organização e versionamento do conhecimento</li>
-              </ul>
-              <div class="pillrow">
-                <span class="pill">Obsidian</span>
-                <span class="pill">Template</span>
-                <span class="pill">Processo</span>
-              </div>
-            </div>
-
-            <div class="item">
-              <h3>Ideação de Solução IoT para Estoque</h3>
-              <p class="meta">Hardware + software + dados</p>
-              <ul>
-                <li>Proposta de monitoramento de entradas/saídas e rastreio de itens</li>
-                <li>Estrutura de dados para auditoria e relatórios</li>
-              </ul>
-              <div class="pillrow">
-                <span class="pill">IoT</span>
-                <span class="pill">Dados</span>
-                <span class="pill">Sistemas</span>
-              </div>
-            </div>
-
-            <div class="item">
-              <h3>Administração Remota com PowerShell</h3>
-              <p class="meta">Prática baseada em curso/labs</p>
-              <ul>
-                <li>Rotinas administrativas remotas e manutenção</li>
-                <li>Base para automação e padronização de tarefas</li>
-              </ul>
-              <div class="pillrow">
-                <span class="pill">PowerShell</span>
-                <span class="pill">Windows Server</span>
-                <span class="pill">Remoting</span>
-              </div>
-            </div>
-          </div>
-          <p class="subtitle" style="margin-top:12px;">
-            Quer que eu troque esses projetos pelos seus projetos “de verdade” (com nome, resultados e links)? Me mande: título + 2-3 bullets + link (GitHub/Drive).
-          </p>
-        </div>
-
-        <div class="card">
-          <h2>Resultados (exemplos)</h2>
-          <div class="list">
-            <div class="item">
-              <h3>Ambiente mais rastreável</h3>
-              <p class="meta">Menos “achismo”, mais evidência.</p>
-              <ul>
-                <li>Padronização de campos e rotinas de registro</li>
-                <li>Facilidade para auditoria e manutenção</li>
-              </ul>
-            </div>
-            <div class="item">
-              <h3>Execução consistente</h3>
-              <p class="meta">Processo repetível e menos retrabalho.</p>
-              <ul>
-                <li>Checklists e templates para casos reais</li>
-                <li>Documentação pronta para handoff</li>
-              </ul>
-            </div>
-            <div class="item">
-              <h3>Aprendizado aplicável</h3>
-              <p class="meta">Curso → prática → resultado.</p>
-              <ul>
-                <li>Labs guiados + aplicação em tarefas do dia a dia</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <h2>Links</h2>
-          <div class="list">
-            <div class="item">
-              <h3>GitHub</h3>
-              <p class="meta">Coloque seu link aqui</p>
-              <p class="subtitle" style="margin:10px 0 0;">
-                Ex.: <code>https://github.com/seu-usuario</code>
-              </p>
-            </div>
-            <div class="item">
-              <h3>LinkedIn</h3>
-              <p class="meta">Coloque seu link aqui</p>
-              <p class="subtitle" style="margin:10px 0 0;">
-                Ex.: <code>https://www.linkedin.com/in/seu-perfil</code>
-              </p>
-            </div>
-            <div class="item">
-              <h3>Currículo (PDF)</h3>
-              <p class="meta">Opcional</p>
-              <p class="subtitle" style="margin:10px 0 0;">
-                Dica: coloque um arquivo <code>cv.pdf</code> na pasta e linke aqui.
-              </p>
-              <a class="btn" href="cv.pdf" target="_blank" rel="noopener">📄 Abrir CV</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="formacao" class="grid-2">
-        <div class="card">
-          <h2>Formação</h2>
-          <div class="list">
-            <div class="item">
-              <h3>Engenharia da Computação</h3>
-              <p class="meta">SENAI CIMATEC • (em andamento)</p>
-              <ul>
-                <li>Base sólida em computação, sistemas, redes, dados e engenharia</li>
-                <li>Projetos acadêmicos com foco em solução e apresentação</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <h2>Cursos e trilhas</h2>
-          <div class="list">
-            <div class="item">
-              <h3>Windows / Administração</h3>
-              <p class="meta">Trilhas de estudo e prática (PowerShell, serviços, administração remota)</p>
-              <ul>
-                <li>Windows PowerShell para administração remota</li>
-                <li>Conceitos relacionados a RDS e acesso remoto</li>
-              </ul>
-            </div>
-            <div class="item">
-              <h3>Organização de conhecimento</h3>
-              <p class="meta">Obsidian para faculdade/estágio • templates e consistência</p>
-              <ul>
-                <li>Padronização de notas de estudo e de casos reais</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="contato" class="card">
-        <h2>Contato</h2>
-        <p class="subtitle">
-          Coloque seus dados aqui (eu não vou inventar email/telefone). Você pode copiar e editar em 30 segundos.
-        </p>
-
-        <div class="grid-2">
-          <div class="item">
-            <h3>Email</h3>
-            <p class="meta">seuemail@exemplo.com</p>
-          </div>
-          <div class="item">
-            <h3>WhatsApp</h3>
-            <p class="meta">+55 (xx) xxxxx-xxxx</p>
-          </div>
-        </div>
-
-        <p class="subtitle" style="margin-top:12px;">
-          Última atualização: <span id="lastUpdate"></span>
-        </p>
-      </section>
-
-      <footer>
-        © <span id="year"></span> Pedro Mascarenhas Pina • Portfólio em HTML (simples, rápido e sem frescura)
-      </footer>
-    </main>
-  </div>
-
-  <script>
-    // Ano e "última atualização" automáticos
-    const now = new Date();
-    document.getElementById("year").textContent = now.getFullYear();
-    document.getElementById("lastUpdate").textContent =
-      now.toLocaleDateString("pt-BR", { year:"numeric", month:"long", day:"numeric" });
-  </script>
-</body>
+      // load com hash (se tiver)
+      const initial = (location.hash || "").replace("#", "").trim();
+      if (initial && panes.some((p) => p.dataset.section === initial)) {
+        setActive(initial);
+      } else {
+        setActive("sobre");
+      }
+    </script>
+  </body>
 </html>
